@@ -1,5 +1,6 @@
 ﻿@model Base.Models.EmployeeDetail
 
+
 @{
     ViewBag.Title = "Details";
 }
@@ -38,10 +39,17 @@
             @Html.DisplayNameFor(model => model.IdentityCard)
         </dt>
 
+
         <dd>
             @Html.DisplayFor(model => model.IdentityCard)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Position.Salary)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Position.Salary)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Phone)
         </dt>

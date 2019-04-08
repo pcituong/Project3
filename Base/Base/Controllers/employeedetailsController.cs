@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using Base.Models;
 
 namespace Base.Controllers
-{
+{   
     [Authorize]
     public class employeedetailsController : Controller
     {
@@ -58,7 +58,8 @@ namespace Base.Controllers
                 db.EmployeeDetails.Add(employeeDetail);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
+            } 
+
 
             ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", employeeDetail.DepartmentID);
             ViewBag.EducationID = new SelectList(db.Educations, "EducationID", "EducationName", employeeDetail.EducationID);

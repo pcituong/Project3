@@ -11,25 +11,28 @@ namespace Base.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class EmployeeDetail
     {
         public int EmployeeID { get; set; }
+        [Required]
         public string Name { get; set; }
         public int Gender { get; set; }
         public string Address { get; set; }
         public int IdentityCard { get; set; }
         public int Phone { get; set; }
         public string Email { get; set; }
+        [Required]
         public string Nation { get; set; }
-        public System.DateTime Birthday { get; set; }
+        public DateTime Birthday { get; set; }
         public string Certificate { get; set; }
         public Nullable<int> DepartmentID { get; set; }
         public int EducationID { get; set; }
         public int PositionID { get; set; }
         public byte[] Avatar { get; set; }
         public Nullable<int> Status { get; set; }
-        public System.DateTime StartWorkingTime { get; set; }
+        public DateTime StartWorkingTime { get; set; }
     
         public virtual Department Department { get; set; }
         public virtual Education Education { get; set; }

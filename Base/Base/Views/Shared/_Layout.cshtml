@@ -23,7 +23,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Employees", "Index", "EmployeeDetails")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>Wellcome @User.Identity.Name</li>
+                    <li>Wellcome @HttpContext.Current.User.Identity.Name</li>
                     <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
 
                 </ul>

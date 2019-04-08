@@ -11,11 +11,19 @@ namespace Base.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Admin
     {
         public int ID { get; set; }
+
+        [Required(ErrorMessage = "Please enter username")]
+        [Display(Name = "User Name:")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Please enter password")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password:")]
         public string Password { get; set; }
     }
 }

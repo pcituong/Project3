@@ -13,26 +13,28 @@ namespace Base.Controllers
         private employee_managementEntities db = new employee_managementEntities();
         // GET: account
 
+        public ActionResult Login()
+        {
+            return View();
+        }
 
-        [HttpGet]
-        [ActionName("Login")]
-        public ActionResult getLogin(Admin usr = null)
+        [HttpPost]
+        public ActionResult Login(Admin usr)
         {
             if (ModelState.IsValid)
             {
                 var u = db.Admins.Where(i => i.Name == usr.Name && i.Password == usr.Password).ToList().Count();
-              
-                
+
                     if (u > 0)
                     {
-                        FormsAuthentication.SetAuthCookie(usr.Name,false);
+                        FormsAuthentication.SetAuthCookie(usr.Name, false);
                         return RedirectToAction("Index", "Home");
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Mật khẩu không đúng");
+                        ModelState.AddModelError("", "Username or Password not match");
                     }
-                
+              
             }
             return View(usr);
         }
@@ -42,6 +44,6 @@ namespace Base.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login", "Account");
         }
-      
+
     }
 }
