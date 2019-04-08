@@ -1,14 +1,19 @@
 ﻿@model IEnumerable<Base.Models.EmployeeDetail>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All Employees";
 }
 
-<h2>Index</h2>
-
+<h2>Employees Details</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+<a href="~/EmployeeDetails/Create" class="btn btn-primary btn-icon-split">
+    <span class="icon text-white-50">
+        <i class="fas fa-user-edit"></i>
+    </span>
+    <span class="text">Add</span>
+</a>
 </p>
+
 <div class="table-responsive">
 <table class="table table-bordered">
     <thead>
@@ -80,9 +85,16 @@
             @Html.DisplayFor(modelItem => item.Position.PositionName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EmployeeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID })
+            <a href="@Url.Action("Details", "EmployeeDetails", new { id = item.EmployeeID })" class="btn btn-info btn-circle btn-sm">
+                <i class="fas fa-info"></i>
+            </a>
+            <a href="@Url.Action("Edit", "EmployeeDetails", new { id = item.EmployeeID })" class="btn btn-warning btn-circle btn-sm">
+                <i class="fas fa-edit"></i>
+            </a>
+            <a href="@Url.Action("Delete", "EmployeeDetails", new { id = item.EmployeeID })" class="btn btn-danger btn-circle btn-sm">
+                <i class="fas fa-trash"></i>
+            </a>
+           
         </td>
     </tr>
 }

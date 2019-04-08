@@ -10,6 +10,7 @@ using Base.Models;
 
 namespace Base.Controllers
 {
+    [Authorize]
     public class employeedetailsController : Controller
     {
         private employee_managementEntities db = new employee_managementEntities();
