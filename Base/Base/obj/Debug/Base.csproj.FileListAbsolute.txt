@@ -164,5 +164,4 @@ C:\Users\GIA TUONG\Desktop\Project3_Home\Project3\Base\Base\obj\Debug\Base.cspro
 C:\Users\GIA TUONG\Desktop\Project3_Home\Project3\Base\Base\obj\Debug\Base.csproj.CopyComplete
 C:\Users\GIA TUONG\Desktop\Project3_Home\Project3\Base\Base\obj\Debug\Base.dll
 C:\Users\GIA TUONG\Desktop\Project3_Home\Project3\Base\Base\obj\Debug\Base.pdb
-D:\ProjectThree\Project3\base\Base\obj\Debug\Base.csprojAssemblyReference.cache
 C:\Users\GIA TUONG\Desktop\Project3_Home\Project3\Base\Base\obj\Debug\Base.csprojAssemblyReference.cache

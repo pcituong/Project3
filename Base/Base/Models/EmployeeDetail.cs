@@ -15,25 +15,57 @@ namespace Base.Models
 
     public partial class EmployeeDetail
     {
+        private const string E = @"[a-zA-Z0-9_\.]+@[a-zA-Z]+\.[a-zA-Z]+(\.[a-zA-Z]+)*";
+        private const string P = @"/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im";
         public int EmployeeID { get; set; }
-        [Required]
+
+        [StringLength(50, ErrorMessage = "The feild must be maxium length 50")]
+        [Required(ErrorMessage = "Please enter Name.")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Please select Gender.")]
         public int Gender { get; set; }
+
+        [StringLength(200, ErrorMessage = "The Address must be maxium length 200")]
+        [Required(ErrorMessage = "Please enter Address.")]
         public string Address { get; set; }
+
+        
+        [Required(ErrorMessage = "Please enter Identity Card.")]
         public int IdentityCard { get; set; }
+
+        [DataType(DataType.PhoneNumber)]
+        [Required(ErrorMessage = "Please enter Phone.")]
         public int Phone { get; set; }
+
+        [RegularExpression(E,ErrorMessage ="Not a valid email")]
+        [StringLength(50, ErrorMessage = "The email must be maxium length 50")]
+        [Required(ErrorMessage = "Please enter Email.")]
         public string Email { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Please enter Nation.")]
         public string Nation { get; set; }
+
+        [Required(ErrorMessage = "Please enter Birthday.")]
         public DateTime Birthday { get; set; }
+
         public string Certificate { get; set; }
         public Nullable<int> DepartmentID { get; set; }
+
+        [Required(ErrorMessage = "Please select Education.")]
         public int EducationID { get; set; }
+
+        [Required(ErrorMessage = "Please select Position.")]
         public int PositionID { get; set; }
+
         public byte[] Avatar { get; set; }
         public Nullable<int> Status { get; set; }
+
+        [Required(ErrorMessage = "Please enter Working Time.")]
         public DateTime StartWorkingTime { get; set; }
-    
+
+       
+
         public virtual Department Department { get; set; }
         public virtual Education Education { get; set; }
         public virtual Position Position { get; set; }
